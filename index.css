@@ -1,0 +1,112 @@
+body{
+    background-color:#0E193F;
+   
+}
+
+.nav{
+    background-color:#0E193F;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0%;
+    box-shadow: 1px 1px #888888;
+}
+.logo{
+    color: seashell;
+    
+}
+.nav ul{
+    list-style: none;
+    display: flex;
+    color: seashell;
+    margin-left: 60%;
+}
+.nav li{
+    
+    padding:20px;
+}
+.card{
+    box-sizing: border-box;
+    box-shadow: 1px 1px #888888;
+    width: 30%;
+    background-color: #0E193F;
+    border-radius: 5px;
+    margin-top: 100px;
+    border: 1px solid  #888888;
+
+
+}
+.card img{
+    width: 70%;
+    height: 50%;
+    border-radius: 50%;
+    margin-left: 50px;    
+
+}
+.card h4,h5{
+    color: seashell;
+    text-align: center;
+    font-family: segoe print;
+}
+
+.footer{
+    box-shadow: 1px 1px #888888;
+    position: fixed;
+    background-color: #0E193F;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    left: 0;
+    border-top: 1px solid  #888888;
+
+}
+.footer i{
+    color: seashell;
+    margin-right: 10%;
+    padding:20px;
+    float: right;
+}
+.footer img{
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+    padding-left: 50px;
+   
+    
+}
+.footer span{
+    color: seashell;
+    text-transform: capitalize;
+    position: absolute;
+    top: 20%;
+    margin-left: 50%;
+    
+    
+}
+.img{
+    margin-left: 70%;
+}
+.box{
+    position: absolute;
+    left: 40%;
+    top: 15%;
+    color: seashell;
+}
+.box h4{
+color: seashell;
+font-size: 24px;
+
+}
+.box hr{
+    width: 800px;
+}
+.box span{
+    color: seashell;
+    font-size: 24px;
+   
+}
+.box button{
+    color: seashell;
+background-color: rgb(8, 64, 116);
+border-color:rgb(8, 64, 116) ;
+}
