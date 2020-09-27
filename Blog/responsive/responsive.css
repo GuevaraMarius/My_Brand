@@ -1,0 +1,101 @@
+@media all and (max-width: 670px) {
+    header{
+        width: 100%;
+    }
+    .nav_menu ul{
+display: none;
+    }
+     #bar-icon{
+        display: block;
+        color: black;
+        float: right;
+        font-size: 30px;
+        margin: 20px;
+    }
+    .intro{
+        margin-top: 150px;  
+        margin-left: -70px;
+    }
+    .profile_img img{
+        width: 80px;
+        height: 80px;
+    }
+    .profile_img{
+        margin-left: 0px;
+        margin-top: 70px;
+    }
+    .copyright_msg{
+        display: flex;
+        position: absolute;
+        top: -20;
+    }
+    .copyright_msg{
+        font-size: 12px;
+        
+    }
+    .logos img{
+    width: 30px;
+    height: 30px;
+    
+    }
+     .logos{
+         display: flex;
+         margin-left: 0;
+         position: absolute;
+         top: 25;
+         
+     }
+     footer{
+         height: 100px;
+         position: absolute;
+         bottom: -200;
+     }
+     .wrapper{
+         position: absolute;
+         top: 20%;
+         margin: 0;
+         width: 100%;
+     }
+     form{
+         width: 100%;
+         
+     }
+     .inner-part{
+         margin-left: -100;
+     }
+     .blog-card span{
+margin-top: 30px;
+font-size: 18px;
+     }
+     .blog-card{
+         width: 100%;
+         height: 400px;
+         position: absolute;
+         left: 0;
+         top: 25%;
+     }
+     .blog-card p{
+         font-size: 16px;
+     }
+     .blog-card img{
+        
+        height: 100px;
+        width: 100px;
+        left: 125;
+        position: absolute;
+        top: -10%;
+     }
+     .button-blog{
+         margin-left: -80;
+     }
+     #copyright-visibility{
+         display: none;
+     }
+     #copyright-visibilities{
+         display: block;
+     }
+     #bar-icon{
+        display: block;
+        color: #000;
+     }
+}

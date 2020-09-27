@@ -1,0 +1,152 @@
+header{
+    height: 15%;
+    box-shadow:0px 0px 4px 0px  #000000;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;   
+}
+.nav_menu ul {
+    display: flex;
+    margin-left: 20%;
+    padding: 20px;
+
+}
+ 
+.nav_menu ul li{
+    list-style: none;
+    margin-left: 3%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(69, 69, 69);
+
+
+}
+.nav_menu ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(69, 69, 69);
+}
+.container{
+    margin-top: 10%;
+    display: flex;
+    text-transform: uppercase;
+    
+}
+.intro{
+    margin-left: 150px;
+}
+.profile_img{
+    margin-left: 150px;
+}
+.profile_img img{
+    width: 250px;
+    height: 250px;
+}
+.container .button{
+    background-image: linear-gradient(to right,rgb(168, 52, 235), rgb(235, 52, 165));
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgb(168, 52, 235) ;
+    outline: 0;
+
+}
+footer p{
+    position: absolute;
+    left: 200;
+    top: 20;
+}
+footer{
+    height: 15%;
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    bottom: 0;
+    display: flex;
+    box-shadow:1px 1px 4px 1px  #000000;
+
+}
+.logos{
+   
+    margin-left: 35%;  
+}
+.logos img{
+    width: 50px;
+    height: 50px;
+    padding: 20px;
+    
+}
+.copyright{
+    margin-left: 20%;
+}
+.copyright_msg{
+    padding: 20px;
+    margin-top: 20px;
+    
+}
+
+/* about */
+.blog-card{
+    position: absolute;
+    top: 18%;
+    left: 20%;
+    height: 400px;
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    border-radius: 25px;
+    background:#fff; 
+    box-shadow:2px 3px 15px black;
+
+}
+.blog-card img{
+    border-radius: 5px;
+    height: 250px;
+    width: 250px;
+    left: -125;
+    position: absolute;
+    top: 20%;
+}
+.blog-card .inner-part{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 25px;
+    height: 360px;
+}
+.content  {
+    margin-left: 20%;
+    font-size: 24px;
+}
+.content span{
+    
+    display: block;
+    
+}
+.button-blog{
+    background-image: linear-gradient(to right,rgb(168, 52, 235), rgb(235, 52, 165));
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    border: 1px solid rgb(168, 52, 235) ;
+    outline: 0;
+    position: absolute;
+    bottom: 20;
+    left: 40%;
+
+}
+#copyright-visibilities{
+    display: none;
+}
+#bar-icon{
+    display: none;
+}
