@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/login.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./responsive/responsive.css">
     <script src="https://kit.fontawesome.com/e0ab0bdcee.js" crossorigin="anonymous"></script>
 
@@ -22,21 +23,32 @@
             </div>
         </div>
     </header>
-    <main><div class="wrapper">
-        <div class="container">
+    <main><div class="form-wrapper">
+        <div class="form-container">
             
-            <form class="form">
-                <div><i class="fas fa-user"></i><input type="text" placeholder="Username"></div>
-                <div><i class="fas fa-lock"></i><input type="text" placeholder="email"></div>
-                <div><i class="fas fa-loc"></i><textarea name="" id="" cols="30" rows="10" placeholder="message"></textarea></div>
-                <div><i class="fas fa-sign-in-alt"></i><button type="submit" id="login-button" onclick="login();">Send</button></div>
+            <form class="form" id="contactForm" name="contactForm" action="" method="POST">
+                <div class="alert">your message has been sent </div>
+                <div><i class="fas fa-user"></i><input type="text" placeholder="Username" name="username" id="username"></div>
+                <div><i class="fas fa-lock"></i><input type="email" placeholder="Email" name="email" id="email"></div>
+                <div><i class="fas fa-phone-alt"></i><input type="text" placeholder="Phone number" name="phonenumber" id="phonenumber"></div>
+                <div><i class="fas fa-comments"></i><textarea type="text" name="" id="message" cols="30" rows="10" placeholder="Message" name="message" required></textarea></div>
+                <div><i class="fas fa-sign-in-alt"></i><button type="submit" id="login-button" name="submit" onclick="validate()">Send</button></div>
             </form>
             
         </div>
-    </div></main>
-    <footer>
-    <div class="copyright"><div class="copyright_msg">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</div>
-</div>
+    </div>
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+    <script src="./js/main.js"></script>
+<script src="./js/validate.js"></script>
+</main>
+<footer>
+    <div class="copyright" id="copyright-visibilities" >    <div class="copyright_msg">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</div></div>
+
+<p id="copyright-visibility">Copyright &copy;2020 All rights reserved</p>    </div>
+
+
     <div class="logos"><img src="Images/—Pngtree—linkedin social media icon_3572483.png" alt="">
         <img src="Images/—Pngtree—twitter social media icon_3572493.png" alt="">
         <img src="Images/—Pngtree—facebook social media icon_3572498.png" alt="">
