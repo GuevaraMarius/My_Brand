@@ -3,20 +3,17 @@ body{
 	font-weight: 300;
 }
 	
-.wrapper{
-    background: white;
+.form-wrapper{
 	position: absolute;
-	top: 10%;
+	top: 15%;
 	left: 0;
-	width: 70%;
-    margin-left: 15%;
+	width: 60%;
+    margin-left: 20%;
     
 }
-    .container{
-	max-width: 600px;
-	margin: 0 auto;
+    .form-container{
 	padding: 40px 0;
-	height: 200px;
+	height: auto;
     text-align: center;
 }
 	h1{
@@ -28,19 +25,19 @@ body{
         padding: 100px;
     }
 form{
-    
     background: linear-gradient(to right,rgb(168, 52, 235), rgb(235, 52, 165));
-    height: 80%;
+    height: auto;
     box-shadow: 0 8px 16px  #000000;
 
     
 }
 
-i{
+form i{
     color: #fff;
     margin-right: 10px;
     font-size: 20px;
 }
+
 	input{
 		outline: 0;
 		width: 70%;
@@ -81,4 +78,12 @@ button{
 a{
     text-decoration: none;
     color: #000;
+}
+.alert{
+    background:#79c879;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+    display: none;
 }
