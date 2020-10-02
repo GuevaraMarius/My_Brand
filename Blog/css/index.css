@@ -13,6 +13,9 @@ header{
     padding: 20px;
 
 }
+main{
+    height: 500px;
+}
  
 .nav_menu ul li{
     list-style: none;
@@ -30,7 +33,7 @@ header{
     color: rgb(69, 69, 69);
 }
 .container{
-    margin-top: 10%;
+    margin-top: 15%;
     display: flex;
     text-transform: uppercase;
     
@@ -59,7 +62,7 @@ header{
 }
 footer p{
     position: absolute;
-    left: 200;
+    left: 30%;
     top: 20;
 }
 footer{
@@ -67,14 +70,16 @@ footer{
     position: absolute;
     width: 100%;
     left: 0%;
-    bottom: 0;
+    bottom: -200;
     display: flex;
     box-shadow:1px 1px 4px 1px  #000000;
+    color: black;
 
 }
 .logos{
    
-    margin-left: 35%;  
+    position: absolute;
+    left: 50%;
 }
 .logos img{
     width: 50px;
@@ -83,11 +88,12 @@ footer{
     
 }
 .copyright{
-    margin-left: 20%;
+    color: black;
 }
 .copyright_msg{
     padding: 20px;
     margin-top: 20px;
+    margin-left: 100px;
     
 }
 
