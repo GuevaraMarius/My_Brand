@@ -6,11 +6,11 @@
 display: none;
     }
      #bar-icon{
-        display: block;
+         position: absolute;
         color: black;
-        float: right;
+       right: 20%;
         font-size: 30px;
-        margin: 20px;
+      margin: 20px;
     }
     .intro{
         margin-top: 150px;  
@@ -43,6 +43,8 @@ display: none;
          margin-left: 0;
          position: absolute;
          top: 25;
+         position: absolute;
+         left: 80;
          
      }
      footer{
@@ -68,10 +70,10 @@ margin-top: 30px;
 font-size: 18px;
      }
      .blog-card{
-         width: 100%;
+         width: 70%;
          height: 400px;
          position: absolute;
-         left: 0;
+         left: 50;
          top: 25%;
      }
      .blog-card p{
