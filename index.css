@@ -104,28 +104,23 @@ body{
     box-shadow: 0px 1px 10px 1px #000;
 
 }
-.footer i{
-    color: white;
-    margin-right: 10%;
-    padding:20px;
-    float: right;
-}
 .footer img{
     height: 40px;
     width: 40px;
     padding: 10px;
     padding-left: 20px;
+   
 }
 .footer span{
     color: white;
     text-transform: capitalize;
     position: absolute;
-    top: 20%;
-    margin-left: 40%;
+    top: 30%;
+    margin-left: 30%;
     font-weight: 900; 
 }
 .img{
-    margin-left: 70%;
+    margin-left: 50%;
 }
 .box{
     position: absolute;
@@ -134,7 +129,7 @@ body{
     color: white;   
 }
 .box span{
-    font-size: 24px;  
+    font-size: 20px;  
 }
 .box h4{
 color: white;
@@ -142,8 +137,7 @@ font-size: 24px;
 }
 .box span{
     color: white;
-    font-size: 18px;
-    font-family: segoe print;  
+    line-height: 1.6;
 }
 .contact-card-container{
     width: 70%;
