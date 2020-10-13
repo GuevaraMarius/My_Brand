@@ -36,26 +36,23 @@
 <table>
     <thead>
         <th>Number</th>
-        <th>Name</th>
-        <th>Author</th>
+        <th>First Name</th>
+        <th>Lastname</th>
         <th colspan="3">Action</th>
     </thead>
     <tbody>
-        
-        <tr><td>1</td>
-            <td>First User</td>
-        <td>Guevara</td>
+        <% const items = [
+        {id:1,firstname:'Irabizi',Lastname:'Guevara'},
+        {id:2,firstname:'Isabwe',Lastname:'Egide'}] %>
+    <% items.forEach((item) => { %>
+        <tr><td><%= item.id %></td>
+            <td><%= item.firstname %></td>
+        <td><%= item.Lastname %></td>
         <td><a href="" class="button"id="edit">Edit</a></td>
         <td><a href="" class="button"id="delete">Delete</a></td>
         <td><a href="" class="button"id="others">Publish</a></td>
         </tr>
-        <tr><td>2</td>
-            <td>Second user</td>
-        <td>Marius</td>
-        <td><a href="" class="button" id="edit">Edit</a></td>
-        <td><a href="" class="button" id="delete">Delete</a></td>
-        <td><a href="" class="button" id="others">Publish</a></td>
-        </tr>
+        <% }); %>
         
         
     </tbody>
