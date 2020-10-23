@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="postsList"></div>
+
+
+
+
+    <script>
+const postList=document.querySelector('.postsList');
+const url ='https://testewe.herokuapp.com/articles';
+let con=0;
+let output="";
+fetch(url).then(res=>{
+  return  res.json()
+})
+.then(posts =>{
+for (let index = 0; index < 1; index++) {
+    console.log(posts);
+    output+=`
+    
+    <li>${posts[0]}</li>
+    
+    `;
+    
+}    
+postList.innerHTML=output;
+})
+
+
+    </script>
+</body>
+</html>
