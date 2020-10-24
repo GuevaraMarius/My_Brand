@@ -25,6 +25,17 @@
         </div>
         <div class="norifications"></div>
     </header>
+    <div class="sidebar">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <li><i class="fas fa-user"></i><a href="./Profile/create.html"><br>PROFILE</a> </li>
+      <li><i class="fas fa-blog"></i><a href="./index.html"><br>POSTS</a> </li>
+  <li><i class="fas fa-comments"></i><a href="./messages/messages.html"><br>MESSAGES</a></li>  
+  <li><i class="fas fa-user-friends"></i><a href="./messages/messages.html"><br>USERS</a></li>  
+  <li><i class="fas fa-sign-out-alt"></i><a href="#"><br>LOGOUT</a></li>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  </div>
     <main>
         <div class="admin-wrapper">
             <div class="admin-content">
@@ -50,6 +61,16 @@
             </div> 
         </div>
     </main>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "150px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      </script>
     <script>
        // Make a request for a user with a given ID
 axios.get('https://testewe.herokuapp.com/articles')

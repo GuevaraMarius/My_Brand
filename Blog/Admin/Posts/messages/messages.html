@@ -23,37 +23,113 @@
             </div>
         </div>
     </header>
+    <div class="sidebar">
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <li><i class="fas fa-user"></i><a href="../Profile/create.html"><br>PROFILE</a> </li>
+          <li><i class="fas fa-blog"></i><a href="../index.html"><br>POSTS</a> </li>
+      <li><i class="fas fa-comments"></i><a href="../messages/messages.html"><br>MESSAGES</a></li>  
+      <li><i class="fas fa-user-friends"></i><a href="../messages/messages.html"><br>USERS</a></li>  
+      <li><i class="fas fa-sign-out-alt"></i><a href="#"><br>LOGOUT</a></li>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      </div>
     <main>
         <div class="admin-wrapper">
             <div class="admin-content">
 <div class="content">
 <h2 class="page-title">View messages</h2>
-<table>
-    <thead>
-        <th>Number</th>
-        <th>Names</th>
-        <th>Email</th>
-        <th >Action</th>
-    </thead>
-    <tbody>
-        <tr><td>1</td>
-            <td> GMI</td>
-        <td>GMI@gmail.com</td>
-        <td><a href="" class="button"id="others">View</a></td>
-        </tr>
-        <tr><td>2</td>
-            <td>IMG</td>
-        <td>IMG@gmail.com</td>
-        <td><a href="" class="button" id="others">View</a></td>
-        </tr>
-        
-        
-    </tbody>
-</table>
+<div class="content">
+    <div class="messageCard">
+    <ul id="message-list"></ul>
+</div>
+</div>
 
 </div>
             </div> 
         </div>
+        <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "150px";
+            }
+            
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+            </script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>   
+        <script>
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyDu-fRXme0cZL89mJm6LHOYML6CgI9JLx4",
+    authDomain: "mybrand-63430.firebaseapp.com",
+    databaseURL: "https://mybrand-63430.firebaseio.com",
+    projectId: "mybrand-63430",
+    storageBucket: "mybrand-63430.appspot.com",
+    messagingSenderId: "682370462499",
+    appId: "1:682370462499:web:46aafb12e86549b6f2d296"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db=firebase.firestore();
+
+
+            const messageList = document.querySelector('#message-list');
+
+function renderMessages(doc){
+    let li = document.createElement('li');
+    let name = document.createElement('span');
+    let message = document.createElement('span');
+    let email = document.createElement('span');
+    let phonenumber = document.createElement('span');
+    let cross = document.createElement('cross');
+
+    li.setAttribute('data-id', doc.id);
+    name.textContent = doc.data().name;
+    message.textContent = doc.data().messages;
+    email.textContent=doc.data().email;
+    phonenumber.textContent=doc.data().phonenumber;
+    cross.textContent = 'x';
+    li.appendChild(name);
+    li.appendChild(message);
+    li.appendChild(email);
+    li.appendChild(phonenumber);
+    li.appendChild(cross);
+
+    messageList.appendChild(li);
+
+    cross.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute('data-id');
+        db.collection('messages').doc(id).delete();
+    });
+};
+//getting data
+// db.collection('messages').get().then(snapshot => {
+//     snapshot.docs.forEach(doc => {
+//         renderMessages(doc);
+//     });
+// });
+
+db.collection('messages').onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+        console.log(change.doc.data());
+        if(change.type == 'added'){
+            renderMessages(change.doc);
+        } else if (change.type == 'removed'){
+            let li = messageList.querySelector('[data-id=' + change.doc.id + ']');
+            messageList.removeChild(li);
+        }
+    });
+});
+
+
+
+        </script>
+        
+
     </main>
 </body>
 </html>
