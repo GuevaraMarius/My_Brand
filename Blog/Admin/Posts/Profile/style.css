@@ -1,0 +1,150 @@
+header{
+    height: 100%;
+    box-shadow:0px 0px 4px 0px  #000000;
+    width: 20%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;  
+}
+.sidebar{
+    display: none;
+}
+.nav_menu{
+    margin-left:20%;
+}
+.nav_menu ul {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20%;
+    padding: 10px;
+
+}
+.nav_menu ul li{
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    
+}
+.nav_menu ul li i{
+font-size: 35px;
+}
+.nav_menu ul li a{
+    text-decoration: none;
+    color: rgb(69, 69, 69);
+    padding: 10px;
+}
+.nav_menu ul i{
+    text-decoration: none;
+    color: rgb(69, 69, 69);
+    padding: 10px;
+}
+.form-wrapper{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    background: white;
+	width: 70%;
+	
+	margin-top: -200px;
+    overflow: hidden;
+    margin-left: 15%;
+}
+
+.form-container{
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 40px 0;
+	height: 400px;
+	text-align: center;
+}
+	h1{
+		font-size: 40px;
+        font-weight: 200;
+        color: black;
+	}
+.form{
+	padding: 30px 0;
+    position: relative;
+}
+i{
+    color: black;
+    margin-right: 10px;
+    font-size: 20px;
+}
+	input{
+		outline: 0;
+		width: 70%;
+		border-radius: 3px;
+		padding: 10px 15px;
+		margin: 0 auto 10px auto;
+		text-align: center;
+		font-size: 18px;
+        font-weight: 300;
+        border:2px solid  rgb(235, 52, 165);
+    }
+    button{
+		outline: 0;
+		color: white;
+		border: 0;
+		padding: 10px 15px;
+		border-radius: 3px;
+		width: 250px;
+		cursor: pointer;
+		font-size: 18px;
+        width: 70%;
+        border:1px solid rgb(168, 52, 235);
+        background-image: linear-gradient(to right,rgb(168, 52, 235), rgb(235, 52, 165));
+}    
+@media only screen and (max-width: 600px) {
+    header{
+        display: none;
+    }
+    .sidebar{
+        display: block;
+    }
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+      .sidenav i{
+        color: rgb(69, 69, 69);
+      }
+      .sidenav a{
+        color: rgb(69, 69, 69);
+          font-size: 14px;
+      }
+      .sidenav li{
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
+  }

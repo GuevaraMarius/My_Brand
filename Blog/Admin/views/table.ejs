@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e0ab0bdcee.js" crossorigin="anonymous"></script>
+    <title>Admin</title>
+</head>
+<body>
+    <header>
+       
+        <div class="nav">
+            
+            <div class="nav_menu">
+                
+                <ul>
+                    <li><i class="fas fa-user"></i><a href="../Profile/create.html"><br>PROFILE</a> </li>
+                    <li><i class="fas fa-blog"></i><a href="../index.html"><br>POSTS</a> </li>
+                <li><i class="fas fa-comments"></i><a href="../messages/messages.html"><br>MESSAGES</a></li>  
+                <li><i class="fas fa-user-friends"></i><a href="../messages/messages.html"><br>USERS</a></li>  
+                <li><i class="fas fa-sign-out-alt"></i><a href="#"><br>LOGOUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="admin-wrapper">
+            <div class="admin-content">
+<div class="button-group">
+    <a href="create.html"  class="button"id="others">Add user</a>
+    <a href="index.html" class="button"id="others">Manage users</a>
+
+</div>
+<div class="content">
+<h2 class="page-title">Manage user</h2>
+<table>
+    <thead>
+        <th>Number</th>
+        <th>First Name</th>
+        <th>Lastname</th>
+        <th colspan="3">Action</th>
+    </thead>
+    <tbody>
+        <% const items = [
+        {id:1,firstname:'Irabizi',Lastname:'Guevara'},
+        {id:2,firstname:'Isabwe',Lastname:'Egide'}] %>
+    <% items.forEach((item) => { %>
+        <tr><td><%= item.id %></td>
+            <td><%= item.firstname %></td>
+        <td><%= item.Lastname %></td>
+        <td><a href="" class="button"id="edit">Edit</a></td>
+        <td><a href="" class="button"id="delete">Delete</a></td>
+        <td><a href="" class="button"id="others">Publish</a></td>
+        </tr>
+        <% }); %>
+        
+        
+    </tbody>
+</table>
+
+</div>
+            </div> 
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/e0ab0bdcee.js" crossorigin="anonymous"></script>
+   
+    <title>Admin</title>
+</head>
+<body>
+    <header>
+       
+        <div class="nav">
+            
+            <div class="nav_menu">
+                
+                <ul>
+                    <ul>
+                        <li><i class="fas fa-user"></i><a href="../Profile/create.html"><br>PROFILE</a> </li>
+                        <li><i class="fas fa-blog"></i><a href="../index.html"><br>POSTS</a> </li>
+                    <li><i class="fas fa-comments"></i><a href="../messages/messages.html"><br>MESSAGES</a></li>  
+                    <li><i class="fas fa-user-friends"></i><a href="../messages/messages.html"><br>USERS</a></li>  
+                    <li><i class="fas fa-sign-out-alt"></i><a href="#"><br>LOGOUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="sidebar">
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <li><i class="fas fa-user"></i><a href="../Profile/create.html"><br>PROFILE</a> </li>
+          <li><i class="fas fa-blog"></i><a href="../index.html"><br>POSTS</a> </li>
+      <li><i class="fas fa-comments"></i><a href="../messages/messages.html"><br>MESSAGES</a></li>  
+      <li><i class="fas fa-user-friends"></i><a href="../messages/messages.html"><br>USERS</a></li>  
+      <li><i class="fas fa-sign-out-alt"></i><a href="#"><br>LOGOUT</a></li>
+        </div>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      </div>
+    <main>
+   
+        <div class="admin-wrapper">
+            <div class="admin-content">
+<div class="button-group">
+   <button class="button"id="others"> <a href="create.html"  >Add User</a></button>
+   <button class="button"id="others"><a href="index.html" >Manage User</a></button>
+
+</div>
+<div class="content">
+<h2 class="page-title">Add User</h2>
+<div class="form">
+<form action=""><div>
+    <label>Name</label><br>
+    <input type="text" class="text-input" name="title" class="text-input">
+</div>
+<div>
+    <label>Email</label><br>
+    <input type="text" class="text-input" name="title" class="text-input">
+</div>
+
+    <label>Password</label><br>
+    <input type="text" class="text-input" name="title" class="text-input">
+</div>
+</div>
+    <button type="submit" class="button" id="others">Add User</button>
+</div>
+</div>
+ 
+</form>
+</div>
+</div>
+            </div> 
+        </div>
+        
+    </main>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "150px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+    <script src="ckeditor5-build-classic/ckeditor.js"></script>
+    <script>
+ClassicEditor.create( document.getElementById( 'body' ), {
+        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', ],
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+            ]
+        }
+    } )
+    .catch( error => {
+        console.log( error );
+    } );
+
+    </script>
+</body>
+</html>
