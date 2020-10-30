@@ -58,8 +58,30 @@
         
     </tbody>
 </table>
+
             </div> 
         </div>
+<div id="edit-mod" class="edit-modal">
+  <form class="edit-form" action="#">
+    <div class="ed-t">
+      <span> <label for="">Title:</label></span><br><br>
+      <input type="text" name="edit-title" id="editTitle">
+    </div>
+   <div>
+    <span><label for="">Image:</label></span><br><br>
+    <input type="file" name="" id="">
+   </div>
+    <div class="ed-c">
+      <span><label for="">Description:</label></span><br><br>
+    <textarea name="edit-content" id="editContent"></textarea>
+    </div>
+    <div class="post-submit">
+      <button class="cancel_post" type="reset" id="delete"> Cancel</button>
+      <button type="submit" class="update-btn update" id="edit">
+        Update
+      </button>
+  </form>
+</div>
     </main>
 
     <script>
@@ -72,8 +94,9 @@
       }
       </script>
     <script>
+      const BASE_URL="https://testewe.herokuapp.com/articles"
        // Make a request for a user with a given ID
-axios.get('https://testewe.herokuapp.com/articles')
+axios.get(BASE_URL)
   .then(function (response) {
     let html = "";
     const post = document.querySelector('.tabbody');
@@ -82,47 +105,135 @@ axios.get('https://testewe.herokuapp.com/articles')
       posts.forEach(element => {
           const postElement = `
         <form action="/articles" id="deleteArticle">
+          <a href="/index.html/:postId">
         <tr><td>${element.title}</td>
             <td>${element.posted}</td>
-        <td><a href="" class="button"id="edit">Edit</a></td>
-        <td><a href="" class="button"id="delete">Delete</a></td>
+            
+        <td><button class="button" onclick="editPost('${element._id}')"id="edit" >Edit</button></td>
+        <td><button onclick="deletetePost('${element._id}')" id="delete" > delete</button></td>
         <td><a href="" class="button"id="others">Publish</a></td>
         </tr>
+        </a>
         </form>
         `
         html += postElement;
+      
+        
       });
       post.innerHTML = html;
+      
   })
   .catch(function (error) {
     console.log(error);
-  })
-  
+  });
+  function editPost(id) {
+  const edit_conf=document.querySelector('#edit');
+  edit_conf.addEventListener("click", () => {
+    const editModal = document.querySelector(".edit-modal");
+    const editForm = document.querySelector(".edit-form");
+    axios
+      .get(`${BASE_URL}/getOnePost/${id}`)
+      .then((response) => {
+        const postToUpdate = response.data.onePost;
+        console.log(postToUpdate)
+        editModal.style.display = "block";
+        editForm["edit-title"].value = postToUpdate.title;
+        editForm["edit-content"].value = postToUpdate.description;
+        editForm.onsubmit = (e) => {
+          e.preventDefault();
+          updatePost(id);
+        };
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  });
+}
+function updatePost(id) {
+  const editForm = document.querySelector(".edit-form");
+  const editModal = document.querySelector(".edit-modal");
+  axios
+    .patch(
+      `${BASE_URL}/update/${id}`,
+      {
+        title: editForm["edit-title"].value,
+        description: editForm["edit-content"].value,
+      },
+      {
+        headers: { "auth-token": localStorage.getItem("token") },
+      }
+    )
+    .then(() => {
+      editForm.reset();
+
+      setTimeout(() => {
+        editModal.style.display = "none";
+        location.reload();
+      }, 1000);
+    })
+    .catch((error) => {
+    });
+}
+  function deletetePost(id) {
+    const delete_conf = document.querySelector("#delete");
+    delete_conf.addEventListener("click", () => {
+      axios
+            .delete(`${BASE_URL}/delete/${id}`, {
+            })
+            .then((response) => {
+              console.log('deleted')
+              setTimeout(() => {
+                location.reload();
+              }, 1000);
+            })
+            .catch((error) => {
+              console.log(error.response.data);
+            });
+function updatePost(id) {
+  document.querySelector(".update").innerHTML = "Saving...";
+  const editForm = document.querySelector(".edit-form");
+  const updaterror = document.querySelector(".updateErr");
+  const editModal = document.querySelector(".edit-modal");
+  axios
+    .put(
+      `${BASE_URL}/api/posts/update/${id}`,
+      {
+        title: editForm["edit-title"].value,
+        description: editForm["edit-content"].value,
+      },
+      {
+        headers: { "auth-token": localStorage.getItem("token") },
+      }
+    )
+    .then(() => {
+      document.querySelector(".update").innerText = "Saved!";
+      editForm.reset();
+
+      setTimeout(() => {
+        editModal.style.display = "none";
+        location.reload();
+      }, 1000);
+    })
+    .catch((error) => {
+      document.querySelector(".update").innerHTML = "Update";
+      updaterror.innerText = error.response.data;
+    });
+}
+
+
+
+    })
+  }
+
+ //update 
+
+
+
     </script>
-     <!-- <script>  
-        let form = document.getElementById('deleteArticle');
-          form.addEventListener('click' , function (e){
-            e.preventDefault();
-            fetch('https://testewe.herokuapp.com/articles', {
-            method: 'POST', 
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-            
-          })
-          .then(response => response.json())
-          .then(data => {
-            console.log('Success:', data)
-          })
-          form.addEventListener('click',(e)=>{
-              console.log('hello');
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
-          });
-    </script> -->
+    <script>
+
+     
+          </script>
 
 </body>
 </html>
