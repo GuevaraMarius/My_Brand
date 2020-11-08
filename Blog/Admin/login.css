@@ -1,0 +1,101 @@
+body{
+	color: white;
+	font-weight: 300;
+}
+	
+.form-wrapper{
+	position: absolute;
+	top: 15%;
+	left: 0;
+	width: 60%;
+    margin-left: 20%;
+    
+}
+    .form-container{
+	padding: 40px 0;
+	height: auto;
+    text-align: center;
+}
+	h1{
+		font-size: 40px;
+        font-weight: 200;
+        color: black;
+    }
+    .form{
+        padding: 100px;
+    }
+form{
+    background: linear-gradient(to right,rgb(168, 52, 235), rgb(235, 52, 165));
+    height: auto;
+    box-shadow: 0 8px 16px  #000000;
+
+    
+}
+
+form i{
+    color: #fff;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+	input{
+		outline: 0;
+		width: 70%;
+		padding: 10px 15px;
+		margin: 0 auto 10px auto;
+		text-align: center;
+		font-size: 18px;
+        font-weight: 300;
+        border: 0;
+        border-bottom: 1px solid rgb(168, 52, 235);
+       
+    }
+    textarea{
+        outline: 0;
+		width: 70%;
+		padding: 10px 15px;
+		margin:10px auto 10px auto;
+		text-align: center;
+		font-size: 18px;
+        font-weight: 300;
+        border: 0;
+        height: 100px;
+        border-bottom: 1px solid rgb(168, 52, 235);
+        
+    }
+
+button{
+		outline: 0;
+		border: 0;
+		padding: 10px 15px;
+		border-radius: 3px;
+		width: 250px;
+		cursor: pointer;
+		font-size: 18px;
+        width: 70%;
+        border:1px solid rgb(168, 52, 235);
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.alert{
+    background:#79c879;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+form{
+    position: absolute;
+    top: -20;
+    box-shadow: none;
+}
+form textarea ,button {
+    width: 100%;
+}
+
+}

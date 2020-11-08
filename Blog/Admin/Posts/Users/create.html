@@ -48,17 +48,14 @@
 <div class="content">
 <h2 class="page-title">Add User</h2>
 <div class="form">
-<form action=""><div>
-    <label>Name</label><br>
-    <input type="text" class="text-input" name="title" class="text-input">
-</div>
+<form id="addUser">
 <div>
     <label>Email</label><br>
-    <input type="text" class="text-input" name="title" class="text-input">
+    <input type="text" class="text-input" name="title" class="text-input" id="email">
 </div>
 
     <label>Password</label><br>
-    <input type="text" class="text-input" name="title" class="text-input">
+    <input type="password" class="text-input" name="title" class="text-input" id="password">
 </div>
 </div>
     <button type="submit" class="button" id="others">Add User</button>
@@ -81,22 +78,27 @@
           document.getElementById("mySidenav").style.width = "0";
         }
         </script>
-    <script src="ckeditor5-build-classic/ckeditor.js"></script>
-    <script>
-ClassicEditor.create( document.getElementById( 'body' ), {
-        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', ],
-        heading: {
-            options: [
-                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
-            ]
-        }
-    } )
-    .catch( error => {
-        console.log( error );
-    } );
+   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
 
-    </script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyDu-fRXme0cZL89mJm6LHOYML6CgI9JLx4",
+          authDomain: "mybrand-63430.firebaseapp.com",
+          databaseURL: "https://mybrand-63430.firebaseio.com",
+          projectId: "mybrand-63430",
+          storageBucket: "mybrand-63430.appspot.com",
+          messagingSenderId: "682370462499",
+          appId: "1:682370462499:web:46aafb12e86549b6f2d296"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db= firebase.firestore();
+        const auth=firebase.auth();
+      </script>
+      <script src="../scripts/script.js"></script>  
 </body>
 </html>

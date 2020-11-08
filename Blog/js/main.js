@@ -80,9 +80,9 @@ form.addEventListener('submit', (e) => {
       phonenumber: form.phonenumber.value,
       messages: form.message.value
   });
-  form.username.value = '';
-  form.email.value = '';
-  form.phonenumber.value = '';
-  form.message.value = '';
+
+setTimeout(() => { document.querySelector('.alert').style.display="block" }, 0)
+setTimeout(() => { document.querySelector('.alert').style.display="none" }, 2000)
+form.reset();
 
 });
